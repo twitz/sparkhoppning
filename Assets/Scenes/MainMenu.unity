@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 209164424}
   - component: {fileID: 209164423}
   - component: {fileID: 209164426}
-  - component: {fileID: 209164427}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -271,22 +270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: Level
---- !u!114 &209164427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209164421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  parameter: GameStatus
-  TriggerEvent: 2
-  value: 1
 --- !u!1 &360088447
 GameObject:
   m_ObjectHideFlags: 0

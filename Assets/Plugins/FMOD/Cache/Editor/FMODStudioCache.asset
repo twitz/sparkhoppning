@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../Skarphoppning/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637560791756602795
+  lastModified: 637560847028680798
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -34,8 +34,8 @@ MonoBehaviour:
   Path: event:/music/MainTheme
   guid: 4091c918d8bc8241a51917321eff5b0a
   Banks:
-  - {fileID: -8968823295638025113}
-  IsStream: 1
+  - {fileID: 6879554612354757963}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -82,6 +82,27 @@ MonoBehaviour:
     data1: 2397460080
     data2: 70867878
   Exists: 1
+--- !u!114 &-2389027922717523259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: EFF_MOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637560853974658369
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1292
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,8 +116,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8575738131791303959}
-  - {fileID: -8968823295638025113}
+  - {fileID: -2389027922717523259}
+  - {fileID: 6879554612354757963}
   EditorEvents:
   - {fileID: 5476530258942937239}
   - {fileID: 2751970728617383586}
@@ -110,10 +131,10 @@ MonoBehaviour:
   - {fileID: -5362457616727572890}
   - {fileID: 4830045543607086694}
   MasterBanks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   StringsBanks:
-  - {fileID: 8575738131791303959}
-  stringsBankWriteTime: 637560791756622802
+  - {fileID: -2389027922717523259}
+  stringsBankWriteTime: 637560853974658369
   cacheVersion: 6
 --- !u!114 &1690288904563216692
 MonoBehaviour:
@@ -130,14 +151,14 @@ MonoBehaviour:
   Path: event:/ui/RaceWon
   guid: 64c6abf07be0ee429bed062763ffe290
   Banks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 2718
 --- !u!114 &1774851806078282476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +174,7 @@ MonoBehaviour:
   Path: event:/sfx/Player/Jump
   guid: 8923fcbea3b2f3428f9a2d9dccdeca35
   Banks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -176,7 +197,7 @@ MonoBehaviour:
   Path: event:/sfx/Spark/Medar
   guid: 119ac418722a574f8661a59136deea1f
   Banks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -219,7 +240,7 @@ MonoBehaviour:
   Path: event:/ui/RaceStart
   guid: 107bbd3fab78e14db0cb8b819a6ce83d
   Banks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -227,6 +248,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2718
+--- !u!114 &6879554612354757963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: EFF_MOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637560853974728283
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7738339670982739637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +282,7 @@ MonoBehaviour:
   Path: event:/sfx/Player/Crouch
   guid: 42cd3172ff8ec346996110258df52d3d
   Banks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -265,12 +305,12 @@ MonoBehaviour:
   Path: ../Skarphoppning/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637560791756622802
+  lastModified: 637560847713478938
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1292
-  Exists: 1
+  Exists: 0
 --- !u!114 &8713845741631879259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +326,7 @@ MonoBehaviour:
   Path: event:/ui/RaceLost
   guid: 6354b9b811c5e6438f192f6906a763b1
   Banks:
-  - {fileID: -8968823295638025113}
+  - {fileID: 6879554612354757963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
