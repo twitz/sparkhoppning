@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{fdd00a12-d404-450f-9214-7778039d8d6a}">
+		<property name="assetPath">
+			<value>Music/1-52 Super Reversed Sweep.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.3926530612244896</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fb07800a-bb69-402a-b413-b004b62fef46}</destination>
+		</relationship>
+	</object>
+</objects>
