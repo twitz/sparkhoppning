@@ -95,3 +95,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# FMOD
+fmod_editor.log
+EFF_MOD/.cache
+EFF_MOD/.user
