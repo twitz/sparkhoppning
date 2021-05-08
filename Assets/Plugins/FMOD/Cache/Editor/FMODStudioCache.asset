@@ -97,11 +97,31 @@ MonoBehaviour:
   Path: EFF_MOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637560853974658369
+  lastModified: 637560901569510201
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1292
+    Value: 1488
+  Exists: 1
+--- !u!114 &-1276715155602125751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactForce
+  m_EditorClassIdentifier: 
+  Name: ImpactForce
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3358213083
+    data2: 1432343640
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -126,15 +146,19 @@ MonoBehaviour:
   - {fileID: 8713845741631879259}
   - {fileID: 1690288904563216692}
   - {fileID: 1774851806078282476}
+  - {fileID: 6858604256673174257}
+  - {fileID: 7567457409210308730}
+  - {fileID: 2873498464913085953}
   EditorParameters:
   - {fileID: -3426655986582074031}
   - {fileID: -5362457616727572890}
   - {fileID: 4830045543607086694}
+  - {fileID: -1276715155602125751}
   MasterBanks:
   - {fileID: 6879554612354757963}
   StringsBanks:
   - {fileID: -2389027922717523259}
-  stringsBankWriteTime: 637560853974658369
+  stringsBankWriteTime: 637560901569510201
   cacheVersion: 6
 --- !u!114 &1690288904563216692
 MonoBehaviour:
@@ -205,6 +229,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2873498464913085953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/Player/Kick
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/Player/Kick
+  guid: 2c67c2e75b981542a32ff0b5750d40d0
+  Banks:
+  - {fileID: 6879554612354757963}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4830045543607086694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +295,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2718
+--- !u!114 &6858604256673174257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/Ambience/Amb
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/Ambience/Amb
+  guid: 283a0379e1c4a44ab8fb946c641c8929
+  Banks:
+  - {fileID: 6879554612354757963}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &6879554612354757963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,10 +333,33 @@ MonoBehaviour:
   Path: EFF_MOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637560853974728283
+  lastModified: 637560901569490358
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &7567457409210308730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/Player/Impact
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/Player/Impact
+  guid: 29323db0f6ff5d4abe0bfec2094ca280
+  Banks:
+  - {fileID: 6879554612354757963}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7738339670982739637
 MonoBehaviour:
   m_ObjectHideFlags: 0

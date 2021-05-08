@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{9b4086b8-9da6-49d7-89dd-58db1379f000}">
+		<property name="assetPath">
+			<value>Ambience/amb_wind_fast3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>31.931895833333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fb07800a-bb69-402a-b413-b004b62fef46}</destination>
+		</relationship>
+	</object>
+</objects>
