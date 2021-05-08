@@ -152,7 +152,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{92287cca-11cd-44f1-a010-7ea2058d0195}">
 		<property name="name">
-			<value>Audio 1</value>
+			<value>Command</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{2299cc75-8341-49ad-a494-a76ac0c098f9}</destination>
@@ -360,7 +360,7 @@
 	<object class="MixerBusFader" id="{eb85f54f-0ee9-4955-ad2f-f4f4a14a370f}" />
 	<object class="MultibandEqEffect" id="{6a50d891-66a1-4a64-b8ec-f7e03d7e334f}">
 		<property name="frequencyA">
-			<value>2498.10815</value>
+			<value>1150</value>
 		</property>
 		<property name="qualityA">
 			<value>0.434896529</value>
