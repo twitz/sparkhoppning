@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: acceleration
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4545118803950566683, guid: 6f9293e5767c9574d932122800734e27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4545118804991386400, guid: 6f9293e5767c9574d932122800734e27, type: 3}
       propertyPath: m_Name
       value: Player

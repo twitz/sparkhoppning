@@ -48,30 +48,37 @@ namespace Player
         private void HandleMovement()
         {
             var movement = Physics.gravity;
-            var localVelocity = characterController.velocity;
-            if (_movementVector.z > 0)
+            if (_movementVector.sqrMagnitude > 0)
             {
-                var accelerationPerSecond = maxSpeed / acceleration;
-                movement += transform.forward * Mathf.Min(localVelocity.z + accelerationPerSecond, maxSpeed);
+                movement += transform.forward + _movementVector * maxSpeed;
             }
-            else
-            {
-                var decelerationPerSecond = 0 / deceleration;
-                movement -= transform.forward * Mathf.Max(0, localVelocity.z + decelerationPerSecond);
-            }
-
-            if (_movementVector.x != 0)
-            {
-                var accelerationPerSecond = _movementVector.x * (maxSpeed / acceleration) * sideFriction;
-                movement += new Vector3(localVelocity.x + accelerationPerSecond, 0, 0);
-            }
-            
             characterController.Move(movement * Time.deltaTime);
+            
+            // var movement = Physics.gravity;
+            // var localVelocity = characterController.velocity;
+            // if (_movementVector.z > 0)
+            // {
+            //     var accelerationPerSecond = maxSpeed / acceleration;
+            //     movement += transform.forward * Mathf.Min(localVelocity.z + accelerationPerSecond, maxSpeed);
+            // }
+            // else
+            // {
+            //     var decelerationPerSecond = 0 / deceleration;
+            //     movement -= transform.forward * Mathf.Max(0, localVelocity.z + decelerationPerSecond);
+            // }
+            //
+            // if (_movementVector.x != 0)
+            // {
+            //     var accelerationPerSecond = _movementVector.x * (maxSpeed / acceleration) * sideFriction;
+            //     movement += new Vector3(localVelocity.x + accelerationPerSecond, 0, 0);
+            // }
+            //
+            // characterController.Move(movement * Time.deltaTime);
         }
 
         private void LateUpdate()
         {
-            Debug.Log("Velocity " + transform.InverseTransformDirection(characterController.velocity));
+            // Debug.Log("Velocity " + transform.InverseTransformDirection(characterController.velocity));
         }
 
         public void OnMovementInput(InputAction.CallbackContext context)
