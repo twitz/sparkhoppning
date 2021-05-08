@@ -1,8 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Player
 {
@@ -10,7 +14,10 @@ namespace Player
     {
         [Header("Components")]
         [SerializeField]
-        private CharacterController characterController;
+        private new Rigidbody rigidbody;
+
+        [SerializeField]
+        private Transform characterTransform;
 
         [SerializeField]
         private Rigidbody ragdoll;
@@ -46,42 +53,19 @@ namespace Player
             transform = base.transform;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             HandleMovement();
         }
 
         private void HandleMovement()
         {
-            // var movement = Physics.gravity;
-            // if (_movementVector.sqrMagnitude > 0)
-            // {
-            //     movement += transform.forward + _movementVector * maxSpeed;
-            // }
-            // characterController.Move(movement * Time.deltaTime);
-
             if (!canMove) return;
-            var movement = Physics.gravity;
-            var localVelocity = characterController.velocity;
-            if (_movementVector.z > 0)
-            {
-                var accelerationPerSecond = maxSpeed / acceleration;
-                movement += transform.forward * Mathf.Min(localVelocity.z + accelerationPerSecond, maxSpeed);
-            }
-            else
-            {
-                var decelerationPerSecond = 0 / deceleration;
-                movement -= transform.forward * Mathf.Max(0, localVelocity.z + decelerationPerSecond);
-            }
+            var localVelocity = transform.InverseTransformVector(rigidbody.velocity);
 
-            if (_movementVector.x != 0)
-            {
-                var accelerationPerSecond =
-                    _movementVector.x * sideFriction; // TODO acceleration/smoothing (maxSpeed / acceleration)
-                movement += new Vector3(localVelocity.x + accelerationPerSecond, 0, 0);
-            }
-
-            characterController.Move(movement * Time.deltaTime);
+            if (!(_movementVector.z > 0) || localVelocity.z >= maxSpeed) return;
+            var force = _movementVector * acceleration;
+            rigidbody.AddForce(force, ForceMode.Acceleration);
         }
 
         public void OnMovementInput(InputAction.CallbackContext context)
@@ -99,10 +83,17 @@ namespace Player
             }
         }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Obstacle"))
+            {
+                StartCoroutine(DeathSequence());
+            }
+        }
+
         private IEnumerator DeathSequence()
         {
             canMove = false;
-            characterController.enabled = false;
             ragdoll.transform.parent = null;
             ragdoll.isKinematic = false;
             ragdoll.AddForce(transform.forward * 10, ForceMode.Impulse);
