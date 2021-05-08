@@ -12,27 +12,24 @@ namespace Player
 
         [Header("Movement Settings")]
         [SerializeField, Min(0.001f)]
-        private float baseMovementSpeed;
-
-        [SerializeField, Min(0.001f)]
         private float maxSpeed = 10f;
 
         [SerializeField]
         private float acceleration = 5f;
 
         [SerializeField, Tooltip("How quickly the spark slows down while braking")]
-        private float brakeSpeed = 10f;
+        private float brakeSpeed = 4f;
 
         [SerializeField, Tooltip("How quickly the spark slows down when no input is detected")]
-        private float deceleration = 4f;
+        private float deceleration = 10f;
 
         [SerializeField, Range(0f, 1f)]
         private float sideFriction = 0.95f;
 
-        [SerializeField, Tooltip("How tightly the kart can turn left or right.")]
+        [SerializeField, Tooltip("How tightly the spark can turn left or right.")]
         public float steering = 5f;
 
-        [SerializeField, Tooltip("Additional gravity for when the kart is in the air.")]
+        [SerializeField, Tooltip("Additional gravity for when the spark is in the air.")]
         public float jumpGravity = 1f;
 
         private new Transform transform;
@@ -50,8 +47,31 @@ namespace Player
 
         private void HandleMovement()
         {
-            var movementVector = transform.forward + Physics.gravity + _movementVector * baseMovementSpeed;
-            characterController.Move(movementVector * Time.deltaTime);
+            var movement = Physics.gravity;
+            var localVelocity = characterController.velocity;
+            if (_movementVector.z > 0)
+            {
+                var accelerationPerSecond = maxSpeed / acceleration;
+                movement += transform.forward * Mathf.Min(localVelocity.z + accelerationPerSecond, maxSpeed);
+            }
+            else
+            {
+                var decelerationPerSecond = 0 / deceleration;
+                movement -= transform.forward * Mathf.Max(0, localVelocity.z + decelerationPerSecond);
+            }
+
+            if (_movementVector.x != 0)
+            {
+                var accelerationPerSecond = _movementVector.x * (maxSpeed / acceleration) * sideFriction;
+                movement += new Vector3(localVelocity.x + accelerationPerSecond, 0, 0);
+            }
+            
+            characterController.Move(movement * Time.deltaTime);
+        }
+
+        private void LateUpdate()
+        {
+            Debug.Log("Velocity " + transform.InverseTransformDirection(characterController.velocity));
         }
 
         public void OnMovementInput(InputAction.CallbackContext context)
