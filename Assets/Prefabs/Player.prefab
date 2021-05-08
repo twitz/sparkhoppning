@@ -113,6 +113,9 @@ MonoBehaviour:
   rigidbody: {fileID: 8416001510842764363}
   characterTransform: {fileID: 2534921106864732735}
   ragdoll: {fileID: 525525289}
+  followCamera: {fileID: 0}
+  speedCamera: {fileID: 0}
+  deathCamera: {fileID: 0}
   maxSpeed: 30
   acceleration: 10
   brakeSpeed: 10

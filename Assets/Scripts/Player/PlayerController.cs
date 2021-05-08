@@ -22,6 +22,17 @@ namespace Player
         [SerializeField]
         private Rigidbody ragdoll;
 
+        [Header("Cameras")]
+
+        [SerializeField]
+        private GameObject followCamera;
+    
+        [SerializeField]
+        private GameObject speedCamera;
+
+        [SerializeField]
+        private GameObject deathCamera;
+        
         [Header("Movement Settings")]
         [SerializeField, Min(0.001f)]
         private float maxSpeed = 10f;
@@ -51,11 +62,15 @@ namespace Player
         private void Start()
         {
             transform = base.transform;
+            followCamera.SetActive(true);
+            speedCamera.SetActive(false);
+            deathCamera.SetActive(false);
         }
 
         private void FixedUpdate()
         {
             HandleMovement();
+            HandleCameras();
         }
 
         private void HandleMovement()
@@ -66,6 +81,23 @@ namespace Player
             if (!(_movementVector.z > 0) || localVelocity.z >= maxSpeed) return;
             var force = _movementVector * acceleration;
             rigidbody.AddForce(force, ForceMode.Acceleration);
+        }
+        
+        private void HandleCameras()
+        {
+            if (deathCamera.activeInHierarchy) return;
+            var hasSpeed = rigidbody.velocity.sqrMagnitude > 0;
+            switch (hasSpeed)
+            {
+                case true when !speedCamera.activeInHierarchy:
+                    followCamera.SetActive(false);
+                    speedCamera.SetActive(true);
+                    break;
+                case false when !followCamera.activeInHierarchy:
+                    followCamera.SetActive(true);
+                    speedCamera.SetActive(false);
+                    break;
+            }
         }
 
         public void OnMovementInput(InputAction.CallbackContext context)
@@ -93,6 +125,9 @@ namespace Player
 
         private IEnumerator DeathSequence()
         {
+            deathCamera.SetActive(true);
+            followCamera.SetActive(false);
+            speedCamera.SetActive(false);
             canMove = false;
             ragdoll.transform.parent = null;
             ragdoll.isKinematic = false;
