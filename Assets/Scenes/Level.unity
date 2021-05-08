@@ -380,8 +380,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998287839}
   m_LocalRotation: {x: 0.25881937, y: -0, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: -24.94, z: 45.56}
-  m_LocalScale: {x: 20, y: 1, z: 100}
+  m_LocalPosition: {x: 0, y: -62.5, z: 110.5}
+  m_LocalScale: {x: 20, y: 1, z: 250}
   m_Children: []
   m_Father: {fileID: 1307291946}
   m_RootOrder: 1
@@ -455,17 +455,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 861713885, guid: 6f9293e5767c9574d932122800734e27, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 861713885, guid: 6f9293e5767c9574d932122800734e27, type: 3}
-      propertyPath: m_SkinWidth
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545118803950566681, guid: 6f9293e5767c9574d932122800734e27, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 861713884, guid: 6f9293e5767c9574d932122800734e27, type: 3}
+      propertyPath: acceleration
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4545118804991386400, guid: 6f9293e5767c9574d932122800734e27, type: 3}
       propertyPath: m_Name
@@ -556,6 +548,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1019847482}
+    - target: {fileID: 7154379877111863110, guid: 8caa815272c967c46bb100f83b8f80ec, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7223169945369956280, guid: 8caa815272c967c46bb100f83b8f80ec, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -615,6 +611,10 @@ PrefabInstance:
     - target: {fileID: 8588162709518123435, guid: 8caa815272c967c46bb100f83b8f80ec, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.27361912
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588162709518123436, guid: 8caa815272c967c46bb100f83b8f80ec, type: 3}
+      propertyPath: field of view
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8caa815272c967c46bb100f83b8f80ec, type: 3}

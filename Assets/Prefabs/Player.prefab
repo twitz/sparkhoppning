@@ -91,7 +91,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4545118803950566683}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -176,7 +176,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &861713884
@@ -192,8 +192,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 861713885}
-  baseMovementSpeed: 5
-  maxMovementSpeed: 10
+  maxSpeed: 15
+  acceleration: 30
+  brakeSpeed: 10
+  deceleration: 30
+  sideFriction: 0.95
+  steering: 5
+  jumpGravity: 1
 --- !u!114 &4056414257869201658
 MonoBehaviour:
   m_ObjectHideFlags: 0
