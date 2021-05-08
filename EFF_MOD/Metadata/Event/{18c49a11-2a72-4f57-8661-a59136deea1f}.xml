@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{18c49a11-2a72-4f57-8661-a59136deea1f}">
 		<property name="name">
-			<value>Medar</value>
+			<value>SparkLoop</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
