@@ -77,12 +77,17 @@ namespace Player
         {
             if (!canMove) return;
             var localVelocity = transform.InverseTransformVector(rigidbody.velocity);
-
             if (!(_movementVector.z > 0) || localVelocity.z >= maxSpeed) return;
             var force = _movementVector * acceleration;
             rigidbody.AddForce(force, ForceMode.Acceleration);
         }
-        
+
+        private void LateUpdate()
+        {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerSpeed", rigidbody.velocity.z);
+            Debug.Log("Z Velocity " + rigidbody.velocity.z);
+        }
+
         private void HandleCameras()
         {
             if (deathCamera.activeInHierarchy) return;
