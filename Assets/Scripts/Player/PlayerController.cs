@@ -42,20 +42,8 @@ namespace Player
         [SerializeField]
         private float acceleration = 5f;
 
-        [SerializeField, Tooltip("How quickly the spark slows down while braking")]
-        private float brakeSpeed = 4f;
-
-        [SerializeField, Tooltip("How quickly the spark slows down when no input is detected")]
-        private float deceleration = 10f;
-
-        [SerializeField, Range(0f, 1f)]
-        private float sideFriction = 0.95f;
-
-        [SerializeField, Tooltip("How tightly the spark can turn left or right.")]
-        private float steering = 5f;
-
-        [SerializeField, Tooltip("Additional gravity for when the spark is in the air.")]
-        private float jumpGravity = 1f;
+        [SerializeField]
+        private float jumpForce = 1000f;
 
         [SerializeField, FMODUnity.EventRef]
         private string playerDeathEvent;
@@ -242,6 +230,7 @@ namespace Player
 
         private IEnumerator VictorySequence()
         {
+            rigidbody.AddForce((transform.up + transform.forward) * jumpForce, ForceMode.Impulse);
             _isVictorySequenceActive = true;
             _canMove = false;
             followCamera.SetActive(false);
