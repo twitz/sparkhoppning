@@ -35,7 +35,7 @@ namespace Player
         
         [Header("Movement Settings")]
         [SerializeField, Min(0.001f)]
-        private float maxSpeed = 10f;
+        private float maxSpeed = 30f;
 
         [SerializeField]
         private float acceleration = 5f;
@@ -58,6 +58,8 @@ namespace Player
         private new Transform transform;
         private Vector3 _movementVector;
         private bool canMove = true;
+        private int klubbadakCollisionCount = 0;
+        private float snowBuildup = 0f; //Subtraheras från maxSpeed, går från 0 till 5
 
         private void Start()
         {
@@ -77,15 +79,58 @@ namespace Player
         {
             if (!canMove) return;
             var localVelocity = transform.InverseTransformVector(rigidbody.velocity);
-            if (!(_movementVector.z > 0) || localVelocity.z >= maxSpeed) return;
+            //if (!(_movementVector.z > 0) || localVelocity.z >= maxSpeed) return;
+            
+            //Klubbadak-kod
+            if(klubbadakCollisionCount > 0)
+            {
+                snowBuildup += 30f * Time.fixedDeltaTime;
+                if(snowBuildup > 15f)
+                {
+                    snowBuildup = 15f;
+                }
+            }
+            else
+            {
+                snowBuildup -= 6.25f * Time.fixedDeltaTime;
+                if (snowBuildup < 0f)
+                {
+                    snowBuildup = 0f;
+                }
+            }
+
+            Debug.Log(localVelocity.z);
+            
             var force = _movementVector * acceleration;
+            if(localVelocity.z >= (maxSpeed - snowBuildup))
+            {
+                force.z = -200f * Time.fixedDeltaTime;
+            }
+            // Det krävs lite fart för att svänga
+            if (localVelocity.z < 0.1f)
+            {
+                force.x = 0f;
+            }
+            else
+            {
+                var turnModifier = (localVelocity.z + 4f) / maxSpeed;
+                if(turnModifier > 1f)
+                {
+                    turnModifier = 1f;
+                }
+                else if (turnModifier < 0.3f)
+                {
+                    turnModifier = 0.3f;
+                }
+                force.x *= turnModifier;
+            }
             rigidbody.AddForce(force, ForceMode.Acceleration);
         }
 
         private void LateUpdate()
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerSpeed", rigidbody.velocity.z);
-            Debug.Log("Z Velocity " + rigidbody.velocity.z);
+            //Debug.Log("Z Velocity " + rigidbody.velocity.z);
         }
 
         private void HandleCameras()
@@ -126,6 +171,18 @@ namespace Player
             {
                 StartCoroutine(DeathSequence());
             }
+            else if (other.gameObject.CompareTag("Klubbadak"))
+            {
+                klubbadakCollisionCount += 1;
+            }
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (other.gameObject.CompareTag("Klubbadak"))
+            {
+                klubbadakCollisionCount -= 1;
+            }
         }
 
         private IEnumerator DeathSequence()
@@ -136,7 +193,7 @@ namespace Player
             canMove = false;
             ragdoll.transform.parent = null;
             ragdoll.isKinematic = false;
-            ragdoll.AddForce(transform.forward * 10, ForceMode.Impulse);
+            ragdoll.AddForce(transform.forward * 20, ForceMode.Impulse);
             yield return new WaitForSeconds(3);
             SceneManager.LoadScene("Level");
         }
