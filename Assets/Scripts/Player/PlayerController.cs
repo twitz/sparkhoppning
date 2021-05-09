@@ -58,6 +58,9 @@ namespace Player
         [FMODUnity.EventRef]
         private string playerDeathEvent;
 
+        [SerializeField, FMODUnity.EventRef]
+        private string playerBumpEvent;
+
         private new Transform transform;
         private Vector3 _movementVector;
         private bool canMove = true;
@@ -157,15 +160,6 @@ namespace Player
             _movementVector = new Vector3(input.x, 0, input.y);
         }
 
-        public void CollidedWith(Collision collider, GameObject initiator)
-        {
-            if (collider.gameObject.CompareTag("Obstacle"))
-            {
-                StartCoroutine(DeathSequence());
-                Destroy(initiator);
-            }
-        }
-
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Obstacle"))
@@ -175,6 +169,12 @@ namespace Player
             else if (other.gameObject.CompareTag("Klubbadak"))
             {
                 klubbadakCollisionCount += 1;
+            }
+
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("BumpForce", other.relativeVelocity.y);
+            if (playerBumpEvent != null)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(playerBumpEvent);
             }
         }
 
@@ -188,7 +188,10 @@ namespace Player
 
         private IEnumerator DeathSequence()
         {
-            FMODUnity.RuntimeManager.PlayOneShot(playerDeathEvent);
+            if (playerDeathEvent != null)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(playerDeathEvent);
+            }
             deathCamera.SetActive(true);
             followCamera.SetActive(false);
             speedCamera.SetActive(false);
