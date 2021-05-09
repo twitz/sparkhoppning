@@ -59,7 +59,7 @@ namespace Player
         private Vector3 _movementVector;
         private bool canMove = true;
         private int klubbadakCollisionCount = 0;
-        private float snowBuildup = 0f; //Subtraheras från maxSpeed, går från 0 till 5
+        private float snowBuildup = 0f; //Subtraheras frï¿½n maxSpeed, gï¿½r frï¿½n 0 till 5
 
         private void Start()
         {
@@ -106,7 +106,7 @@ namespace Player
             {
                 force.z = -200f * Time.fixedDeltaTime;
             }
-            // Det krävs lite fart för att svänga
+            // Det krï¿½vs lite fart fï¿½r att svï¿½nga
             if (localVelocity.z < 0.1f)
             {
                 force.x = 0f;
