@@ -53,10 +53,17 @@
 			<destination>{f8fc240a-3990-4b59-b308-ed786bd82cd1}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{ff985fbd-6ff0-42e7-921c-ba8b05d2da6a}</destination>
+			<destination>{1453a02a-da64-4a3c-95a4-517acf37980d}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{867c51cd-7850-439e-ac8b-4bf98434988e}" />
+	<object class="EventAutomatableProperties" id="{867c51cd-7850-439e-ac8b-4bf98434988e}">
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
+		<property name="dopplerScale">
+			<value>500</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{02990758-dd4c-4488-9b92-42760ccd4ee1}" />
 	<object class="GroupTrack" id="{f87772d6-167f-43c2-8d52-7ca3d95273b6}">
 		<relationship name="modules">
@@ -207,7 +214,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{4d6a789a-dfe2-444c-a942-4927c47f1814}" />
 	<object class="MixerBusFader" id="{ad00f154-5e9e-4b48-9003-c44219957e28}" />
-	<object class="SpatialiserEffect" id="{669eedac-448e-42b6-ab44-456de0965170}" />
+	<object class="SpatialiserEffect" id="{669eedac-448e-42b6-ab44-456de0965170}">
+		<property name="minimumDistance">
+			<value>2.45000005</value>
+		</property>
+		<property name="maximumDistance">
+			<value>80</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{eba2072a-e248-4fc7-b21f-d46b89f3549e}" />
 	<object class="ThreeEQEffect" id="{ee6aaf0c-2243-42e8-86b2-8888f1368465}">
 		<property name="highGain">

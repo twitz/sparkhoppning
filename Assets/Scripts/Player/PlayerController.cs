@@ -55,7 +55,7 @@ namespace Player
         [SerializeField, Tooltip("Additional gravity for when the spark is in the air.")]
         private float jumpGravity = 1f;
 
-        [FMODUnity.EventRef]
+        [SerializeField, FMODUnity.EventRef]
         private string playerDeathEvent;
 
         private new Transform transform;
@@ -130,6 +130,7 @@ namespace Player
 
         private void LateUpdate()
         {
+            Debug.Log("X Velocity " + rigidbody.velocity.x);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerSpeed", rigidbody.velocity.z);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerTurn", rigidbody.velocity.x);
         }
@@ -181,7 +182,7 @@ namespace Player
         {
             if (playerDeathEvent != null)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(playerDeathEvent);
+                FMODUnity.RuntimeManager.PlayOneShot(playerDeathEvent, transform.position);
             }
             deathCamera.SetActive(true);
             followCamera.SetActive(false);

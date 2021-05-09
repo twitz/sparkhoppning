@@ -12,6 +12,6 @@ public class BumpEventEmitter : MonoBehaviour
     {
         if (string.IsNullOrEmpty(playerBumpEvent)) return;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("BumpForce", other.relativeVelocity.y);
-        FMODUnity.RuntimeManager.PlayOneShot(playerBumpEvent);
+        FMODUnity.RuntimeManager.PlayOneShot(playerBumpEvent, transform.position);
     }
 }

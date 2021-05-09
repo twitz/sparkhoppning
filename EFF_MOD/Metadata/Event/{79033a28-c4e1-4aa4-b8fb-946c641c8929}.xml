@@ -204,6 +204,9 @@
 		<property name="startOffset">
 			<value>30</value>
 		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
 		<property name="volume">
 			<value>1.5</value>
 		</property>
@@ -251,6 +254,9 @@
 		<property name="startOffset">
 			<value>30</value>
 		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
@@ -294,6 +300,9 @@
 		</property>
 		<property name="startOffset">
 			<value>30</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -342,6 +351,9 @@
 		<property name="startOffset">
 			<value>30</value>
 		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
@@ -385,6 +397,9 @@
 		</property>
 		<property name="startOffset">
 			<value>30</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -740,7 +755,7 @@
 			<value>0</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.809224308</value>
+			<value>-0.00419298792</value>
 		</property>
 		<property name="isSCurve">
 			<value>true</value>
@@ -911,10 +926,10 @@
 	</object>
 	<object class="AutomationPoint" id="{1d62d8be-67bf-4102-bd73-3faf1f46f680}">
 		<property name="position">
-			<value>29.926108374384235</value>
+			<value>18</value>
 		</property>
 		<property name="value">
-			<value>0.5</value>
+			<value>0.25999999</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b0240048-8ec2-4c6b-8cf7-5c6803f01c3d}">

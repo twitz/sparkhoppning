@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{7ab8c852-06b1-4ddd-90e4-bb6d7fd095f1}">
 		<property name="name">
-			<value>ImpactForce</value>
+			<value>Bumpforce</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9456fd23-2db5-45f8-a098-5a1316503891}</destination>
@@ -13,7 +13,7 @@
 	</object>
 	<object class="GameParameter" id="{c992a92c-defc-44a1-a593-67d0523009b1}">
 		<property name="maximum">
-			<value>10</value>
+			<value>40</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>
