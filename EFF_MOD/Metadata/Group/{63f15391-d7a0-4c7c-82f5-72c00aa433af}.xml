@@ -21,6 +21,7 @@
 		<relationship name="effects">
 			<destination>{2d4e05e9-7492-4c94-92fa-f1fe33cc7548}</destination>
 			<destination>{ed6de92b-c7e9-4780-b81c-fd72e3f86c3b}</destination>
+			<destination>{2ca0dd89-adc1-43ca-94fd-4f278ec7c8c4}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{332c35bd-3edc-4c54-a768-d78443f77ae2}" />
@@ -36,6 +37,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{ed6de92b-c7e9-4780-b81c-fd72e3f86c3b}" />
+	<object class="CompressorEffect" id="{2ca0dd89-adc1-43ca-94fd-4f278ec7c8c4}">
+		<property name="threshold">
+			<value>-19.5</value>
+		</property>
+		<property name="gain">
+			<value>1.5</value>
+		</property>
+	</object>
 	<object class="Automator" id="{0a2bbc17-8d85-4815-aaea-a072355164fa}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>frequencyA</value>
