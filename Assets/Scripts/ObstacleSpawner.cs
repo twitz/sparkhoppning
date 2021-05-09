@@ -42,38 +42,18 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start()
     {
-        // GenerateObstacles();
+        GenerateObstacles();
     }
 
     private void Update()
     {
-#if UNITY_EDITOR
-        GenerateObstacles();
-#endif
+        // GenerateObstacles();
     }
 
     private void GenerateObstacles()
     {
         ClearObstacles();
-        // Use zones and length to setup a grid
-        // Random between min and max obstacles = X
-        // Generate X numbers representing which rows get obstacles
-        // Every row gets a random int representing a column
-        // Generate a random obstacle at this row x column
-        // if (zones == null || zones.Length <= 0) return;
-        // var width = slope.localScale.x * 0.5f;
-        // foreach (var zoneData in zones)
-        // {
-        //     var obstacleCount = Random.Range(zoneData.minObstacles, zoneData.maxObstacles);
-        //     for (var i = 0; i < obstacleCount; i++)
-        //     {
-        //         var spawnAt = new Vector3(Random.Range(-width, width), _bounds.center.y, _bounds.center.z);
-        //         var obstacle = Random.Range(0, zoneData.potentialObstacles.Length - 1);
-        //         var clone = Instantiate(zoneData.potentialObstacles[obstacle], spawnAt, slope.rotation);
-        //         clone.transform.parent = transform;
-        //     }
-        // }
-        
+
         var zoneCount = zones.Length;
         var size = slope.localScale;
         var zoneLength = size.z / zoneCount;
@@ -92,10 +72,10 @@ public class ObstacleSpawner : MonoBehaviour
             for (var j = 0; j < obstacleCount; j++)
             {
                 var randomWithinZone = zoneLength * i / size.z +
-                                           Random.Range(-fractionOffset, fractionOffset);
+                                           Random.Range(fractionOffset, fractionOffset * 2);
                 var spawnOrigin = Vector3.Lerp(startPos, endPos, randomWithinZone);
                 var spawnAt = new Vector3(Random.Range(-zoneWidth, zoneWidth), spawnOrigin.y, spawnOrigin.z);
-                var obstacle = Random.Range(0, zoneData.potentialObstacles.Length - 1);
+                var obstacle = Random.Range(0, zoneData.potentialObstacles.Length);
                 var clone = Instantiate(zoneData.potentialObstacles[obstacle], spawnAt, slope.rotation);
                 clone.transform.parent = transform;
             }
