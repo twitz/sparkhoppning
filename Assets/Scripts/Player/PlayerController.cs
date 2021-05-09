@@ -5,6 +5,7 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -21,6 +22,9 @@ namespace Player
 
         [SerializeField]
         private Rigidbody ragdoll;
+
+        [SerializeField]
+        private Text scoreText;
 
         [Header("Cameras")]
         [SerializeField]
@@ -231,14 +235,15 @@ namespace Player
         {
             _isVictorySequenceActive = true;
             _canMove = false;
-            rigidbody.AddForce((transform.up + transform.forward) * jumpForce, ForceMode.Impulse);
+            rigidbody.AddForce((transform.up + transform.forward) * (jumpForce + rigidbody.velocity.y), ForceMode.Impulse);
             followCamera.SetActive(false);
             speedCamera.SetActive(false);
             victoryCamera.SetActive(true);
+            scoreText.enabled = true;
             var startPosition = transform.position;
             while (!_hasLanded)
             {
-                Debug.Log(transform.position - startPosition);
+                scoreText.text = "Score: " + (transform.position.z - startPosition.z);
                 yield return null;
             }
 
