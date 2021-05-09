@@ -199,6 +199,7 @@ MonoBehaviour:
   followCamera: {fileID: 0}
   speedCamera: {fileID: 0}
   deathCamera: {fileID: 0}
+  victoryCamera: {fileID: 0}
   maxSpeed: 30
   acceleration: 10
   brakeSpeed: 10
@@ -206,7 +207,6 @@ MonoBehaviour:
   sideFriction: 0.2
   steering: 5
   jumpGravity: 1
-  playerBumpEvent: 
 --- !u!114 &4056414257869201658
 MonoBehaviour:
   m_ObjectHideFlags: 0
