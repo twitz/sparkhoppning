@@ -29,7 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5161308707905325832}
+  - {fileID: 4538614462679529030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69,69 +69,65 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &4623542679113739491
+--- !u!1001 &4140739572441797037
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8577483304086652256}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
+    - target: {fileID: 919132149155446097, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
       propertyPath: m_Name
-      value: HCR2 Snowmobile
-      objectReference: {fileID: 0}
-    - target: {fileID: 1824863369544968301, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      value: HCR2 Snowmobile (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
---- !u!4 &5161308707905325832 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
+--- !u!4 &4538614462679529030 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c28111bf9fd57a14caed8a5e357bfe2b, type: 3}
-  m_PrefabInstance: {fileID: 4623542679113739491}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
+  m_PrefabInstance: {fileID: 4140739572441797037}
   m_PrefabAsset: {fileID: 0}
