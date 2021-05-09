@@ -64,7 +64,9 @@ namespace Player
         private Vector3 _movementVector;
         private bool _canMove = true;
         private int klubbadakCollisionCount = 0;
-        private float snowBuildup = 0f; //Subtraheras från maxSpeed, går från 0 till 5
+        private float snowBuildup = 0f; //Subtraheras från maxSpeed, går från 0 till 15
+        private int powderCollisionCount = 0;
+        private float powderBuildup = 0f; //Subtraheras från maxSpeed, går från 0 till 10
 
         private bool _isVictorySequenceActive;
         private bool _hasLanded;
@@ -109,8 +111,26 @@ namespace Player
                 }
             }
 
+            //Puder-kod
+            if (powderCollisionCount > 0)
+            {
+                powderBuildup += 30f * Time.fixedDeltaTime;
+                if (powderBuildup > 10f)
+                {
+                    powderBuildup = 10f;
+                }
+            }
+            else
+            {
+                powderBuildup -= 6.25f * Time.fixedDeltaTime;
+                if (powderBuildup < 0f)
+                {
+                    powderBuildup = 0f;
+                }
+            }
+
             var force = _movementVector * acceleration;
-            if (localVelocity.z >= (maxSpeed - snowBuildup))
+            if (localVelocity.z >= (maxSpeed - snowBuildup + powderBuildup))
             {
                 force.z = -200f * Time.fixedDeltaTime;
             }
@@ -174,16 +194,15 @@ namespace Player
             {
                 StartCoroutine(DeathSequence());
             }
-            else if (other.gameObject.CompareTag("Klubbadak"))
-            {
-                klubbadakCollisionCount += 1;
-            }
         }
 
         private void OnTriggerEnter(Collider other)
         {
             switch (other.gameObject.tag)
             {
+                case "Klubbadak":
+                    klubbadakCollisionCount += 1;
+                    break;
                 case "OutOfBounds" when !_isVictorySequenceActive:
                     StartCoroutine(DeathSequence());
                     break;
@@ -196,7 +215,7 @@ namespace Player
             }
         }
 
-        private void OnCollisionExit(Collision other)
+        private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.CompareTag("Klubbadak"))
             {

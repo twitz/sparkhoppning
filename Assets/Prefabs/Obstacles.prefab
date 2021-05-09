@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7365302320262752299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7365302320262752298}
+  - component: {fileID: 7365302320262752301}
+  m_Layer: 0
+  m_Name: Obstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7365302320262752298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365302320262752299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7365302320262752301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365302320262752299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0146d17514d8849b2d7a55e234dd16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zones:
+  - potentialObstacles:
+    - {fileID: 3637291142784683086, guid: 1a5ed620f25548b4d829652e108edc8c, type: 3}
+    minObstacles: 0
+    maxObstacles: 3
+  - potentialObstacles:
+    - {fileID: 3637291142784683086, guid: 1a5ed620f25548b4d829652e108edc8c, type: 3}
+    - {fileID: 432211010346850808, guid: 9afd4b7a14042054288d2111a893a3ea, type: 3}
+    minObstacles: 1
+    maxObstacles: 5
+  - potentialObstacles:
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    minObstacles: 1
+    maxObstacles: 2
+  - potentialObstacles:
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    - {fileID: 8495603568141839010, guid: c91fb452a659dbe4da42a480b562e1c7, type: 3}
+    minObstacles: 1
+    maxObstacles: 2
+  - potentialObstacles:
+    - {fileID: 1289921054216698240, guid: a72a4a9d828b74a48b892599054c8f1c, type: 3}
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    minObstacles: 2
+    maxObstacles: 9
+  - potentialObstacles:
+    - {fileID: 432211010346850808, guid: 9afd4b7a14042054288d2111a893a3ea, type: 3}
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    minObstacles: 2
+    maxObstacles: 9
+  - potentialObstacles:
+    - {fileID: 1289921054216698240, guid: a72a4a9d828b74a48b892599054c8f1c, type: 3}
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    minObstacles: 2
+    maxObstacles: 9
+  - potentialObstacles:
+    - {fileID: 8495603568141839010, guid: c91fb452a659dbe4da42a480b562e1c7, type: 3}
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    minObstacles: 2
+    maxObstacles: 9
+  - potentialObstacles:
+    - {fileID: 432211010346850808, guid: 9afd4b7a14042054288d2111a893a3ea, type: 3}
+    - {fileID: 8495603568141839010, guid: c91fb452a659dbe4da42a480b562e1c7, type: 3}
+    minObstacles: 2
+    maxObstacles: 9
+  - potentialObstacles:
+    - {fileID: 1289921054216698240, guid: a72a4a9d828b74a48b892599054c8f1c, type: 3}
+    - {fileID: 4912561926697012152, guid: 2a74861b8b311604f8d43571bdb98bfd, type: 3}
+    minObstacles: 2
+    maxObstacles: 9
+  startOffset: 0
+  endOffset: 0
+  bounds: {fileID: 0}
+  slope: {fileID: 0}

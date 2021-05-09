@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8577483304086652256}
   - component: {fileID: -6057861497922963564}
   - component: {fileID: 7064823633423038049}
+  - component: {fileID: 4217765986918145516}
   m_Layer: 0
   m_Name: SnowmobileObstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,6 +70,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &4217765986918145516
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495603568141839010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1, y: 2, z: 3}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &4140739572441797037
 PrefabInstance:
   m_ObjectHideFlags: 0
