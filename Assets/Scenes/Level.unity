@@ -2261,6 +2261,7 @@ GameObject:
   - component: {fileID: 1998287843}
   - component: {fileID: 1998287842}
   - component: {fileID: 1998287841}
+  - component: {fileID: 1998287844}
   m_Layer: 0
   m_Name: Slope
   m_TagString: Untagged
@@ -2344,6 +2345,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998287839}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1998287844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998287839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0146d17514d8849b2d7a55e234dd16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zones: 0
+  slope: {fileID: 0}
 --- !u!1001 &2001520192
 PrefabInstance:
   m_ObjectHideFlags: 0
