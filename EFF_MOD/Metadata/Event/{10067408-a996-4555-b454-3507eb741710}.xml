@@ -223,7 +223,7 @@
 			<value>startOffset</value>
 		</property>
 		<property name="amount">
-			<value>80</value>
+			<value>74.5</value>
 		</property>
 	</object>
 	<object class="Automator" id="{84d1e608-86ae-4266-bb5a-4464d268c78d}">
@@ -310,7 +310,7 @@
 	<object class="MixerBusFader" id="{ba053f79-e552-431e-a000-45a194202950}" />
 	<object class="ThreeEQEffect" id="{4e3d9f7d-f827-46e5-99e4-7657fa3cc285}">
 		<property name="lowGain">
-			<value>3</value>
+			<value>10</value>
 		</property>
 		<property name="midGain">
 			<value>3</value>
