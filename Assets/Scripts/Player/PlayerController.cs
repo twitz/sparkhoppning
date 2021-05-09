@@ -170,12 +170,6 @@ namespace Player
             {
                 klubbadakCollisionCount += 1;
             }
-
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("BumpForce", other.relativeVelocity.y);
-            if (playerBumpEvent != null)
-            {
-                FMODUnity.RuntimeManager.PlayOneShot(playerBumpEvent);
-            }
         }
 
         private void OnCollisionExit(Collision other)
