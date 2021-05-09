@@ -55,11 +55,14 @@ namespace Player
         [SerializeField, Tooltip("Additional gravity for when the spark is in the air.")]
         private float jumpGravity = 1f;
 
+        [FMODUnity.EventRef]
+        private string playerDeathEvent;
+
         private new Transform transform;
         private Vector3 _movementVector;
         private bool canMove = true;
         private int klubbadakCollisionCount = 0;
-        private float snowBuildup = 0f; //Subtraheras fr�n maxSpeed, g�r fr�n 0 till 5
+        private float snowBuildup = 0f; //Subtraheras från maxSpeed, går från 0 till 5
 
         private void Start()
         {
@@ -99,14 +102,12 @@ namespace Player
                 }
             }
 
-            Debug.Log(localVelocity.z);
-            
             var force = _movementVector * acceleration;
             if(localVelocity.z >= (maxSpeed - snowBuildup))
             {
                 force.z = -200f * Time.fixedDeltaTime;
             }
-            // Det kr�vs lite fart f�r att sv�nga
+            // Det krävs lite fart för att svänga
             if (localVelocity.z < 0.1f)
             {
                 force.x = 0f;
@@ -130,7 +131,7 @@ namespace Player
         private void LateUpdate()
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerSpeed", rigidbody.velocity.z);
-            //Debug.Log("Z Velocity " + rigidbody.velocity.z);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerTurn", rigidbody.velocity.x);
         }
 
         private void HandleCameras()
@@ -187,6 +188,7 @@ namespace Player
 
         private IEnumerator DeathSequence()
         {
+            FMODUnity.RuntimeManager.PlayOneShot(playerDeathEvent);
             deathCamera.SetActive(true);
             followCamera.SetActive(false);
             speedCamera.SetActive(false);
