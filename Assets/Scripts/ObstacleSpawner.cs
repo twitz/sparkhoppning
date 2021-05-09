@@ -47,7 +47,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Update()
     {
-        GenerateObstacles();
+        // GenerateObstacles();
     }
 
     private void GenerateObstacles()

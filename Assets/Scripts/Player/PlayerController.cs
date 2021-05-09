@@ -148,7 +148,6 @@ namespace Player
 
         private void LateUpdate()
         {
-            Debug.Log("X Velocity " + rigidbody.velocity.x);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerSpeed", rigidbody.velocity.z);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerTurn", rigidbody.velocity.x);
         }
@@ -230,9 +229,9 @@ namespace Player
 
         private IEnumerator VictorySequence()
         {
-            rigidbody.AddForce((transform.up + transform.forward) * jumpForce, ForceMode.Impulse);
             _isVictorySequenceActive = true;
             _canMove = false;
+            rigidbody.AddForce((transform.up + transform.forward) * jumpForce, ForceMode.Impulse);
             followCamera.SetActive(false);
             speedCamera.SetActive(false);
             victoryCamera.SetActive(true);
@@ -242,6 +241,8 @@ namespace Player
                 Debug.Log(transform.position - startPosition);
                 yield return null;
             }
+
+            yield return Restart();
         }
 
         private IEnumerator Restart()
