@@ -124,7 +124,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: HCR2 Snowmobile (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1824863369544968301, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 49f955b8b9cfce440824280a25999a27, type: 3}
 --- !u!4 &4538614462679529030 stripped
 Transform:
