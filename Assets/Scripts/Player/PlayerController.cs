@@ -58,9 +58,6 @@ namespace Player
         [FMODUnity.EventRef]
         private string playerDeathEvent;
 
-        [SerializeField, FMODUnity.EventRef]
-        private string playerBumpEvent;
-
         private new Transform transform;
         private Vector3 _movementVector;
         private bool canMove = true;
